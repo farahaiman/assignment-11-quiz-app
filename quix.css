@@ -2,7 +2,7 @@
 body{
     margin: 0;
     font-size: 16px;
-    background-color: #02000c;
+    background-color: #cbf1bf;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
@@ -20,6 +20,12 @@ body{
     padding: 30px;
     border-radius: 10px;
 }
+.custom-box::before,
+.custom-box::after{
+    content: '';
+    clear: both;
+    display: table;
+}
 .custom-box.hide{
     display: none;
 
@@ -30,7 +36,7 @@ body{
     font-weight: 500;
     margin-bottom: 15px;
     line-height: 25px;
-}
+}   
 .home-box p{
     font-size: 16px;
     color: #000000;
@@ -55,6 +61,16 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     cursor: pointer;
+    display: inline-block;
+}
+.quiz-box .question-number,
+.quiz-box .question-text,
+.quiz-box .option-container,
+.quiz-box .next-btn,
+.quiz-box .answers-indication{
+    width: 100%;
+    float: left;
+    
 }
 .quiz-box .question-number{
     font-size: 18px;
@@ -66,7 +82,7 @@ body{
 }
 .quiz-box .question-text{
     font-size: 22px;
-    color: rgb(0, 5, 5);
+    color: rgb(0, 7, 7);
     font-weight: 400;
     line-height: 28px;
     padding: 20px 0;
@@ -76,17 +92,60 @@ body{
 }
 .quiz-box .option-container .option{
     background-color: #bbc4ca;
-    padding: 15px;
+    padding:13px 15px;
     font-size: 16px;
     line-height: 22px;
     color: #06000c;
     border-radius: 5px;
     margin-bottom: 10px;
     cursor: pointer;
+    text-transform: capitalize ;
 }
-.quiz-box .question-container{
-    
+.quiz-box .btn{
+    margin: 15px 0;
+   
 }
+
 .quiz-box .answers-indication{
-    
+    border-top: 1px solid rgb(100, 100, 105);
+}
+.quiz-box .answers-indication div{
+    height: 40px;
+    background-color: #998f8f; 
+    width: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right:7px ;
+    margin-top: 15px;
+}
+/* result box */
+.result-box{
+    text-align: center;
+}
+.result-box.hide{
+    display: none;
+}
+.result-box h1 {
+    font-size: 36px; 
+    line-height: 42px;
+    color: rgb(0, 7, 6);
+}
+.result-box table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+.result-box table td{
+    border: 1px solid rgb(172, 172, 177);
+    padding:8px 15px ;
+    font-weight: 500;
+    font-size: 18px;
+   color: rgb(1, 1, 19);
+   width: 50%;
+   text-align: left;
+
+}
+.result-box .btn{
+    margin-right: 20px;
+    border-radius: 10px;
 }
