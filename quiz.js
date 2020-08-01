@@ -7,41 +7,50 @@ let currentQuestion;
 let availableQuestons = [];
 let availableOptions = [];
 
-function setAvailableQuestons(){                  //push the question into availableQuestons  array
+function setAvailableQuestons(){                                     //push the question into availableQuestons  array
 const totalQuestion = quiz.length;
 for(let i=0; i<totalQuestion; i++){
-    // console.log(i)
+                                                                      // console.log(i)
     availableQuestons.push(quiz[i])
 }
    console.log(availableQuestons)
 }
-//set question number and question and option
+                                                                         //set question number and question and option
 function getNewQuestion(){
- //set question number                                              // console.log("hi");
+                                                                         //set question number     // console.log("hi");
 questionNumber.innerHTML = "Question" + (questionCounter + 1) + " of " + quiz.length;
-//set question text
-//get rendom question
+                                                                     //set question text
+                                                                  //get rendom question
 const questionIndex = availableQuestons[Math.floor(Math.random() * availableQuestons.length)]
 currentQuestion = questionIndex;
 questionText.innerHTML = currentQuestion.q;
-// console.log(questionIndex)
-// get the position of questionIndex from the availableQuestons array
+                                                            // console.log(questionIndex)
+                                                           // get the position of questionIndex from the availableQuestons array
 const index1= availableQuestons.indexOf(questionIndex);
-//remove the questionIndex from the availableQuestons array so that the quetion dos'not rept
+                                                          //remove the questionIndex from the availableQuestons array so that the quetion dos'not rept
 
 availableQuestons.splice(index1,1);
-// console.log(questionIndex)
-// console.log(availableQuestons)
-          //set the option get the length option 
-          const optionLen = currentQuestion.options.length
-        // console.log(currentQuestion.options)
+                                                        // console.log(questionIndex)
+                                                       // console.log(availableQuestons)
+                                                     //set the option get the length option 
+ const optionLen = currentQuestion.options.length
+                                                      // console.log(currentQuestion.options)
 
-        for(let i=0; i<optionLen; i++){  // push options into availableQuestons array
+        for(let i=0; i<optionLen; i++){                   // push options into availableQuestons array
         availableQuestons.push(i)
         }
-        for(let i=0; i<optionsLen; i++){   //creat options in html
+        for(let i=0; i<optionLen; i++){                           //creat options in html
+                                                                              //randm option 
+             
+            const optonIndex = setAvailableQuestons[Math.floor(Math.random() * availableOptions.length)];//random optin
+                                                            //get the position of 'optonIndex from the availableOptions
+            const index2 =availableOptions.indexOf(optonIndex);//optonIndex
+                                                            //removee the opton 'optonIndex from the availableOptions so that the optin does not repeat
+            availableOptions.splice(index2,1);
+            console.log(optonIndex)
+             
           const option = document.createElement("div");
-          option.innerHTML = currentQuestion.option[i];
+          option.innerHTML = currentQuestion.options[i];
           option.id =i;
           option.className ="option";
           optionContainer.appendChild(option)

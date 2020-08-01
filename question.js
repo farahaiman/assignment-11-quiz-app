@@ -1,8 +1,8 @@
  //Array of objects
  const quiz =[
      {
-         q:'did you like quiz app ?',
-         options:['Not so','Yes','No','none of above'],
+         q:'fahad is your friend?',
+         options:['Yes','No','none of above'],
           answer:0   
          
      },
