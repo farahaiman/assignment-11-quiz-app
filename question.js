@@ -3,7 +3,7 @@
      {
          q:'fahad is your friend?',
          options:['Yes','No','none of above'],
-          answer:0   
+          answer:2   
          
      },
      {

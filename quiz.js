@@ -18,7 +18,7 @@ for(let i=0; i<totalQuestion; i++){
                                                                          //set question number and question and option
 function getNewQuestion(){
                                                                          //set question number     // console.log("hi");
-questionNumber.innerHTML = "Question" + (questionCounter + 1) + " of " + quiz.length;
+questionNumber.innerHTML = "Question" + " " +(questionCounter  +1 ) + " to " + quiz.length;
                                                                      //set question text
                                                                   //get rendom question
 const questionIndex = availableQuestons[Math.floor(Math.random() * availableQuestons.length)]
@@ -37,21 +37,26 @@ availableQuestons.splice(index1,1);
                                                       // console.log(currentQuestion.options)
 
         for(let i=0; i<optionLen; i++){                   // push options into availableQuestons array
-        availableQuestons.push(i)
+        availableOptions.push(i)
         }
+        let animationDelay = 0.2;
         for(let i=0; i<optionLen; i++){                           //creat options in html
                                                                               //randm option 
              
-            const optonIndex = setAvailableQuestons[Math.floor(Math.random() * availableOptions.length)];//random optin
-                                                            //get the position of 'optonIndex from the availableOptions
-            const index2 =availableOptions.indexOf(optonIndex);//optonIndex
-                                                            //removee the opton 'optonIndex from the availableOptions so that the optin does not repeat
+            const optonIndex = availableOptions[Math.floor(Math.random() * availableOptions.length)];//random optin
+                                                                         //get the position of 'optonIndex from the availableOptions
+            const index2 =availableOptions.indexOf(optonIndex);        //optonIndex
+                                                                        //removee the opton 'optonIndex from the availableOptions so that the optin does not repeat
             availableOptions.splice(index2,1);
-            console.log(optonIndex)
+            // console.log(optonIndex)
+            // console.log(availableOptions)
+            // console.log(optonIndex)
              
           const option = document.createElement("div");
-          option.innerHTML = currentQuestion.options[i];
-          option.id =i;
+          option.innerHTML = currentQuestion.options[optonIndex];
+          option.id =optonIndex;
+          option.style.animationDelay =animationDelay +'s';
+          animationDelay = animationDelay + 0.2;
           option.className ="option";
           optionContainer.appendChild(option)
         }
