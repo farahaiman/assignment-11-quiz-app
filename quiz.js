@@ -39,7 +39,7 @@ availableQuestons.splice(index1,1);
         for(let i=0; i<optionLen; i++){                   // push options into availableQuestons array
         availableOptions.push(i)
         }
-        let animationDelay = 0.2;
+        let animationDelay = 0.15;
         for(let i=0; i<optionLen; i++){                           //creat options in html
                                                                               //randm option 
              
@@ -56,13 +56,30 @@ availableQuestons.splice(index1,1);
           option.innerHTML = currentQuestion.options[optonIndex];
           option.id =optonIndex;
           option.style.animationDelay =animationDelay +'s';
-          animationDelay = animationDelay + 0.2;
+          animationDelay = animationDelay + 0.15;
           option.className ="option";
           optionContainer.appendChild(option)
+          option.setAttribute("onclick","getResult(this)");
         }
 
 questionCounter++
 
+}
+function getResult(element) {  //get the result of current attempt question
+// console.log(optionElement.innerHTML)
+const id =parseInt(element.id);
+// console.log(typeof id);
+//get the answer by comparing id of clicked option
+if(id === currentQuestion.answer){
+    // console.log("answer is correct");
+    //set the green color to the correct option
+    element.classList.add('correct');
+
+}
+else{
+    console.log("answer is wrong");
+}
+    
 }
 function next(){
     if(questionCounter === quiz.length){
