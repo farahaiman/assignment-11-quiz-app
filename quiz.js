@@ -39,7 +39,7 @@ availableQuestons.splice(index1,1);
         for(let i=0; i<optionLen; i++){                   // push options into availableQuestons array
         availableOptions.push(i)
         }
-        optionContainer.innerHTML= '';
+        optionContainer.innerHTML= '';  //is line k likhne se option repeat nhi hon ge
         let animationDelay = 0.15;
         for(let i=0; i<optionLen; i++){                           //creat options in html
                                                                               //randm option 
