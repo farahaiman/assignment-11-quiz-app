@@ -1,7 +1,7 @@
 const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
 const optionContainer = document.querySelector(".option-container");
-
+const answersIndicatorContainer = document.querySelector(".answers-indicator");
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestons = [];
@@ -10,7 +10,7 @@ let availableOptions = [];
 function setAvailableQuestons(){                                     //push the question into availableQuestons  array
 const totalQuestion = quiz.length;
 for(let i=0; i<totalQuestion; i++){
-                                                                      // console.log(i)
+                                                                      // console.log(i) //
     availableQuestons.push(quiz[i])
 }
 //    console.log(availableQuestons)
@@ -80,9 +80,37 @@ if(id === currentQuestion.answer){
 
 }
 else{
-    console.log("answer is wrong");
+    //set the red color the incorrect option
+    // console.log("answer is wrong");
+    element.classList.add("wrong");
+    //if the answer is incorrect then show the currect by adding green color the correct option
+const optionLen= optionContainer.children.length;
+for(let i=0; i<optionLen; i++){
+    if(parseInt(optionContainer.children[i].id) === currentQuestion.answer)
+    optionContainer.children[i].classList.add("correct"); 
 }
+}
+
+}
+unclickableOption();{
     
+}
+
+
+  //make all the options unlickable once the user slect a option (restrict the user change the optin again )
+function unclickableOption(){
+ const optionLen = optionContainer.children.length;
+ for(let i=0 ; i<optionLen; i++){
+     optionContainer.children[i].classList.add("already-answered");
+ }
+}
+function answersIndicator(){
+ const totalQuestion = quiz.length;
+ for( let i=0; i<totalQuestion; i++){
+     const indicator =document.createElement("div");
+     answersIndicatorContainer.appendChild(indicator);
+
+ }  
 }
 
 
@@ -100,4 +128,5 @@ window.onload = function(){
     setAvailableQuestons();
     //second we will call  getNewQuestion funtion
     getNewQuestion();
+    answersIndicator();
 }
