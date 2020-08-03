@@ -175,6 +175,22 @@ animation: slideInLeft .5s ease forwards
     margin-right:7px ;
     margin-top: 15px;
 }
+.quiz-box .answers-indicator div.correct{
+ /* . add the indicator to correct mark ,updateAnswerIndicator wala function is par ya css apply hogi */
+     background-color: green;
+     background-image: url(./img/tik.png);
+     background-size: 50%;
+     background-repeat: no-repeat;
+     background-position: center;
+}
+.quiz-box .answers-indicator div.wrong{
+    /* . add the indicator to wrong mark*/
+    background-color: red;
+    background-image: url(./img/wrong2.png);
+     background-size: 50%;
+     background-repeat: no-repeat;
+     background-position: center;
+}
 /* result box */
 .result-box{
     text-align: center;
