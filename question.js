@@ -1,7 +1,7 @@
  //Array of objects
  const quiz =[
      {
-         q:'fahad is your friend?',
+         q:'Ali Mughal is your teacher?',
          options:['Yes','No','none of above'],
           answer:0      
          
@@ -18,10 +18,11 @@
          answer:0 
         
     },
+    
     {
-        q:'3 * 6',
-        options:['18','20','22','none of above'],
-         answer:0   
+        q:'3 * 8',
+        options:['18','20','24'],
+         answer:2   
         
     },
     {

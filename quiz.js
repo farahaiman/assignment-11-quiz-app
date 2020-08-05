@@ -86,7 +86,7 @@ if(id === currentQuestion.answer){
     //add the indicator to correct mark
     updateAnswerIndicator("correct");
     correctAnswer++;
-    console.log("correct :"+correctAnswer)
+    // console.log("correct :"+correctAnswer)
 
 }
 else{
@@ -134,7 +134,7 @@ function  updateAnswerIndicator(markType){
 
 function next(){
     if(questionCounter === quiz.length){
-        console.log("quiz over");
+        // console.log("quiz over");
         quizOver();
     }
     else{
@@ -161,13 +161,42 @@ function quizResult(){
     result.querySelector(".total-score").innerHTML =correctAnswer + "/" + quiz.length;
 
 }
-function tryAgainQuiz(){
-    
+
+function  resetQuiz(){
+questionCounter = 0;
+correctAnswer =0;
+attempt = 0;
+
 }
-window.onload = function(){
+
+function tryAgainQuiz(){
+    //hide the resultbox
+    result.classList.add("hide");
+    //show the quizbox
+    quizBox.classList.remove("hide");
+    resetQuiz();
+    startQuiz();
+}  
+function goToHome() {
+    ////hide the resultbox
+    result.classList.add("hide");
+    //show the box
+    homeBox.classList.remove("hide");
+    resetQuiz();
+
+}
+// window.onload = 
+function startQuiz(){
+     //hide the homebox
+     homeBox.classList.add("hide");
+     //show the quizbox
+     quizBox.classList.remove("hide");
     //first we will set all question in availableQuestons array
     setAvailableQuestons();
     //second we will call  getNewQuestion funtion
     getNewQuestion();
     answersIndicator();
+}
+window.onload = function(){
+    homeBox.querySelector(".total-question").innerHTML=quiz.length;
 }
